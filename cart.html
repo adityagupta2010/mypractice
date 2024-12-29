@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shopping Cart">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Your Shopping Cart</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="cart" class="container">
+    <h2>Your Cart Items</h2>
+    <div id="cart-items"></div>
+    <h3>Total: $<span id="cart-total">0.00</span></h3>
+  </section>
+
+  <script>
+    // Load cart from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    let total = 0;
+
+    cart.forEach(item => {
+      const itemElement = document.createElement('div');
+      itemElement.classList.add('cart-item');
+      itemElement.innerHTML = `
+        <p>${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}</p>
+      `;
+      cartItemsContainer.appendChild(itemElement);
+      total += item.price * item.quantity;
+    });
+
+    document.getElementById('cart-total').textContent = total.toFixed(2);
+  </script>
+</body>
+</html>
