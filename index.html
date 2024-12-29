@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online Shopping Website">
+  <meta name="keywords" content="shopping, e-commerce, online store">
+  <meta name="author" content="Aditya Gupta">
   <title>Shopping Website</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="container">
@@ -15,6 +19,9 @@
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
           <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
         </ul>
       </nav>
@@ -25,9 +32,26 @@
   <section id="products" class="container">
     <h2>Our Products</h2>
     <div class="product-list">
-      <!-- Product cards will be added dynamically here -->
+      <!-- Sample Product Card -->
+      <div class="product-card">
+        <img src="placeholder.jpg" alt="Product Image">
+        <h3>Product Name</h3>
+        <p>Product Description</p>
+        <p>$Price</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- More product cards will be added dynamically here -->
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Shopping Website. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      <p>Follow us: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+    </div>
+  </footer>
 
   <script src="app.js"></script>
 </body>
